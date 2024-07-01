@@ -1,0 +1,161 @@
+.cover {
+    width: 100%;
+    position: relative;
+    
+    .cover-content {
+        height: 100%;
+        width: 100%;
+        
+        .cover-text {
+            h1 {
+                margin: 80px 0;
+                color: #fff;
+                text-align: center;
+            }   
+        }
+    }
+    
+    .cover-background {
+        background-attachment: fixed;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#cover-home {
+    height: 98%;
+    
+    .cover-background {
+        background-image: url("https://pipe-without.pockethost.io/api/files/8ivefog6sm5n1ku/sqy6bgrasazpal7/0ddcd76d_e98e_412a_bc39_3b0cbd1a8e73_azIoJfYnya.JPG");
+    }
+}
+
+#cover-menu {
+    height: 50%;
+    
+    .cover-background {
+        background-image: url("https://pipe-without.pockethost.io/api/files/8ivefog6sm5n1ku/sqy6bgrasazpal7/0ddcd76d_e98e_412a_bc39_3b0cbd1a8e73_azIoJfYnya.JPG");
+    }
+}
+
+.biography {
+    background-color: #f9f9f9;
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+    
+    .biography-text {
+        max-width: 600px;
+        padding: 0 20px;
+        margin: 0 auto;
+        color: #023047;
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.menu {
+    margin: 120px 0;
+    
+    .menu-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        
+        .menu-text {
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px 40px 15px;
+        }
+        
+        .menu-section {
+            padding: 40px 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            overflow: hidden;
+            
+            .circle-menu {
+                border-radius: 50%;
+                width: 350px;
+                height: 350px;
+                box-shadow: 0px 0px 50px -6px rgba(0,0,0,0.2);
+                transition: all 0.3s;
+                border: 6px solid #fff;
+                overflow: hidden;
+                
+                &:hover {
+                    box-shadow: 0px 10px 60px 10px rgba(0,0,0,0.1);
+                    border: 6px solid orange;
+                }
+                
+                #cirlce-food, #circle-wine {
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 100%;
+                    height: 100%;
+                    transition: scale 0.5s;
+                    
+                    &:hover {
+                        scale: 1.1;
+                    }
+                }
+                
+                #cirlce-food {
+                    background-image: url("https://pipe-without.pockethost.io/api/files/dch2mql50yitdmc/1379hqhemzj7s2u/photo0jpg_cn6ZL86A9Q.jpg");
+                }
+                
+                #circle-wine {
+                    background-image: url("https://pipe-without.pockethost.io/api/files/dch2mql50yitdmc/1379hqhemzj7s2u/photo1jpg_gxJGC40x4J.jpg");
+                }
+            }
+        }
+    }
+}
+
+// RESPONSIVE SECTION
+@media screen and (max-width: 768px) {
+    .menu {
+        margin: 32px 0;
+        
+        .menu-section {
+            display: flex;
+            flex-wrap: wrap;
+            
+            .menu-food {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    
+    .cover .cover-content .cover-text {
+        h1 {
+            margin: 40px 0;
+        }   
+    }
+    
+    .biography {
+        padding: 32px 0;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .circle-menu {
+        width: 300px !important;
+        height: 300px !important;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .circle-menu {
+        width: 250px !important;
+        height: 250px !important;
+    }
+}

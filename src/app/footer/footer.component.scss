@@ -1,0 +1,16 @@
+.footer {
+    height: 100%;
+    width: 100%;
+    
+    .grid {
+        max-width: 1440px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        align-items: flex-start;
+        
+        .column {
+            padding: 32px;
+        }
+    }
+}
