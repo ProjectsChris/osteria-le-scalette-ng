@@ -1,0 +1,49 @@
+.menu {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 15px;
+    
+    hr {
+        border-color: #585858;
+        margin: 14px auto;
+        width: 30px;
+    }
+    
+    .menu-title, .menu-round {
+        text-align: center;
+    }
+    
+    .menu-round {
+        margin-top: 10px;
+    }
+    
+    .menu-dishes {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 10px 0 32px 0;
+    
+        p {
+            text-align: center;
+            max-width: 300px;
+            margin-bottom: 32px;
+        }
+    }
+}
+
+.arrow-top {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    height: 50px;
+    width: 50px;
+    background-color: orange;
+    border-radius: 6px;
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .arrow-top {
+        display: initial;
+    }
+}
