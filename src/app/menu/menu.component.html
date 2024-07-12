@@ -1,7 +1,7 @@
 <div class="menu">
-    <div class="menu-section">
+    <div class="menu-section" *ngFor="let categoryMenu of arrCategoryMenu">
         <div class="menu-title">
-            <h2>Cinta Senese</h2>
+            <h2>{{ categoryMenu.name }}</h2>
         </div>
         
         <div class="menu-round">
@@ -11,7 +11,7 @@
         <hr>
         
         <div class="menu-dishes">
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
+            <p *ngFor="let dish of getArrDishes(categoryMenu.id, 'Antipasto')">{{ dish.name }}</p>
         </div>
         
         <div class="menu-round">
@@ -21,9 +21,7 @@
         <hr>
         
         <div class="menu-dishes">
-            <p>Pici al Guanciale di Cinta Senese</p>
-            <p>Ravioli ripieni si Pecorino di Pienza e pinoli al ragù bianco di Cinta Senese</p>
-            <p>Tagliatelle con salsiccia di Cinta Senese e Funghi Porcini</p>
+            <p *ngFor="let dish of getArrDishes(categoryMenu.id, 'Primo')">{{ dish.name }}</p>
         </div>
         
         <div class="menu-round">
@@ -33,79 +31,7 @@
         <hr>
         
         <div class="menu-dishes">
-            <p>Tagliata di Cinta Senese con Funghi Porcini e patate arrosto</p>
-            <p>Salsiccia di Cinta Senese con patate arrosto</p>
-            <p>Costine di Cinta Senese con patate arrosto</p>
-            <p>Grigliata mista di Cinta Senese con patate arrosto</p>
-            <p>Bistecca di Cinta Senese con funghi porcini e patate arrosto</p>
-        </div>
-    </div>
-    <div class="menu-section">
-        <div class="menu-title">
-            <h2>Cinta Senese</h2>
-        </div>
-        
-        <div class="menu-round">
-            <h3>Antipasto</h3>
-        </div>
-        
-        <div class="menu-dishes">
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
-        </div>
-        
-        <div class="menu-round">
-            <h3>Primo</h3>
-        </div>
-        
-        <div class="menu-dishes">
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
-        </div>
-        
-        <div class="menu-round">
-            <h3>Secondo</h3>
-        </div>
-        
-        <div class="menu-dishes">
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
-        </div>
-    </div>
-    <div class="menu-section">
-        <div class="menu-title">
-            <h2>Cinta Senese</h2>
-        </div>
-        
-        <div class="menu-round">
-            <h3>Antipasto</h3>
-        </div>
-        
-        <div class="menu-dishes">
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
-        </div>
-        
-        <div class="menu-round">
-            <h3>Primo</h3>
-        </div>
-        
-        <div class="menu-dishes">
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
-        </div>
-        
-        <div class="menu-round">
-            <h3>Secondo</h3>
-        </div>
-        
-        <div class="menu-dishes">
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
-            <p>Antipasto misto di Salumi di Cinta Senese (senza glutine)</p>
+            <p *ngFor="let dish of getArrDishes(categoryMenu.id, 'Secondo')">{{ dish.name }}</p>
         </div>
     </div>
 </div>
