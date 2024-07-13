@@ -8,7 +8,6 @@ import { CategoryMenu, Dish } from '../types/ResponseTypes';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  listDishes: any;
   arrCategoryMenu: CategoryMenu[] = []
   arrDishes: Dish[] = [];
   
@@ -18,8 +17,13 @@ export class MenuComponent implements OnInit {
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
     
-    this.arrCategoryMenu = this.serviceMenu.getNameMenu();
-    this.arrDishes = this.serviceMenu.getListDishes();
+    // to fetch all data from API
+    this.serviceMenu.fetchDataCategoryMenu();
+    this.serviceMenu.fetchDataDishes()
+
+    // saves the data into an array
+    this.arrCategoryMenu = this.serviceMenu.getCategoriesMenu();
+    this.arrDishes = this.serviceMenu.getDishes();
   }
   
   // create a function for return all dishes with only specific parameters

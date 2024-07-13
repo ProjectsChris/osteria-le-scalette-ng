@@ -1,50 +1,66 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
-import { CategoryMenu, Dish, ResDishes } from '../types/ResponseTypes';
+import { Injectable } from '@angular/core';
+import { CategoryMenu, Dish, ResponseCategoryMenu, ResponseDish } from '../types/ResponseTypes';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MenuService implements OnInit {
+export class MenuService {
+  private arrCategoryMenu: CategoryMenu[] = []; 
+  private arrDishes: Dish[] = [];
+
   constructor(private http: HttpClient) { }
-  
-  ngOnInit(): void {
-    
-  }
-  
-  getNameMenu(): CategoryMenu[] {
-    let arrCategoryMenu: CategoryMenu[] = []
-    
-    this.http.get('https://pipe-without.pockethost.io/api/collections/categorie_menu/records?sort=order,name&filter=(order>0)').subscribe(
-      (res: any) => {
-        res.items.forEach((c: any) => {
-          // adds info category menu inside an array of categories
-          arrCategoryMenu.push({
-            id: c.id,
-            name: c.name
+
+  // method for fetch all categories of menu
+  fetchDataCategoryMenu(): void {
+    if (this.arrCategoryMenu.length == 0) {
+      this.http.get('https://pipe-without.pockethost.io/api/collections/categorie_menu/records?sort=order,name&filter=(order>0)').subscribe(
+        (res: any) => {
+          res.items.forEach((c: ResponseCategoryMenu) => {
+            this.setCategoryMenu(c);
           });
-        });
-      }
-    );
-    
-    return arrCategoryMenu;
+        }
+      );
+    }
   }
-  
-  getListDishes(): Dish[] {
-    let arrDishes: Dish[] = [];
-    
-    this.http.get('https://pipe-without.pockethost.io/api/collections/piatti/records?perPage=54').subscribe(
-      (res: any) => {
-        res.items.forEach((d: any) => {
-          arrDishes.push({
-            idCategory: d.categoria_menu,
-            typeDish: d.tipologia,
-            name: d.nome
+
+  // method for fetch all dishes of menu
+  fetchDataDishes(): void {
+    if (this.arrDishes.length == 0) {
+      this.http.get('https://pipe-without.pockethost.io/api/collections/piatti/records?perPage=54').subscribe(
+        (res: any) => {
+          res.items.forEach((d: ResponseDish) => {
+            this.setDish(d);
           });
-        });
-      }
-    );
-    
-    return arrDishes;
+        }
+      );
+    }
+  }
+
+  // get list of all categories of menu
+  getCategoriesMenu(): CategoryMenu[] {
+    return this.arrCategoryMenu;
+  }
+
+  // adds new category of menu inside an array
+  setCategoryMenu(c: ResponseCategoryMenu): void {
+    this.arrCategoryMenu.push({
+      id: c.id,
+      name: c.name
+    });
+  }
+
+  // get all dishes of menu
+  getDishes(): Dish[] {
+    return this.arrDishes;
+  }
+
+  // adds new dish inside an array
+  setDish(d: ResponseDish): void {
+    this.arrDishes.push({
+      idCategory: d.categoria_menu,
+      typeDish: d.tipologia,
+      name: d.nome
+    });
   }
 }
