@@ -8,13 +8,15 @@ import { FooterComponent } from './footer/footer.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HomepageComponent,
-    MenuComponent
+    MenuComponent,
+    NavbarComponent
   ],
   imports: [
     AppRoutingModule,

@@ -1,0 +1,34 @@
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img height="38px" src="../../assets/pngtree-chef-restaurant-logo-png-image_6136204.png" alt="Logo">
+        </div>
+        <nav class="menu" #menu>
+            <div class="head">
+                <div class="logo">
+                    <img height="38px" src="../../assets/pngtree-chef-restaurant-logo-png-image_6136204.png" alt="Logo">
+                    <!-- Le Scalette -->
+                </div>
+                <button type="button" (click)="closeMenu()" class="close-menu-btn"></button>
+            </div>
+            <ul>
+                <li><a (click)="closeMenu()" routerLink="">home</a></li>
+                <li><a (click)="closeMenu()" routerLink="/menu">menu</a></li>
+                <li><a (click)="closeMenu()" href="./menu/cantina/cantina.html">cantina</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <!-- <button type="button" class="search-btn icon-btn">
+                <i class="fa-solid fa-search"></i>
+            </button>
+            <button type="button" class="cart-btn icon-btn">
+                <i class="fa-solid fa-shopping-cart"></i>
+            </button> -->
+            <button type="button" (click)="openMenu()" class="open-menu-btn">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </button>
+        </div>
+    </div>
+</header>
