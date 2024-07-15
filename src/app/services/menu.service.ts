@@ -8,13 +8,16 @@ import { CategoryMenu, Dish, ResponseCategoryMenu, ResponseDish } from '../types
 export class MenuService {
   private arrCategoryMenu: CategoryMenu[] = []; 
   private arrDishes: Dish[] = [];
+  private language: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.language = 'it'
+  }
 
   // method for fetch all categories of menu
   fetchDataCategoryMenu(): void {
     if (this.arrCategoryMenu.length == 0) {
-      this.http.get('https://pipe-without.pockethost.io/api/collections/categorie_menu/records?sort=order,name&filter=(order>0)').subscribe(
+      this.http.get('https://pipe-without.pockethost.io/api/collections/categorie_menu_'+ this.language +'/records?sort=order,name&filter=(order>0)').subscribe(
         (res: any) => {
           res.items.forEach((c: ResponseCategoryMenu) => {
             this.setCategoryMenu(c);
@@ -27,7 +30,7 @@ export class MenuService {
   // method for fetch all dishes of menu
   fetchDataDishes(): void {
     if (this.arrDishes.length == 0) {
-      this.http.get('https://pipe-without.pockethost.io/api/collections/piatti/records?perPage=54').subscribe(
+      this.http.get('https://pipe-without.pockethost.io/api/collections/piatti_' + this.language + '/records?perPage=54').subscribe(
         (res: any) => {
           res.items.forEach((d: ResponseDish) => {
             this.setDish(d);
@@ -62,5 +65,10 @@ export class MenuService {
       typeDish: d.tipologia,
       name: d.nome
     });
+  }
+  
+  setLanguage(lang: string): void {
+    this.language = lang;
+    console.log(this.language)
   }
 }
