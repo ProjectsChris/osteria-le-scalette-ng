@@ -1,5 +1,5 @@
 <div class="menu">
-    <div class="menu-section" *ngFor="let categoryMenu of arrCategoryMenu">
+    <div class="menu-section" *ngFor="let categoryMenu of (arrCategoryMenu$ | async)">
         <div class="menu-title">
             <h2>{{ categoryMenu.name }}</h2>
         </div>
@@ -11,7 +11,7 @@
         <hr>
         
         <div class="menu-dishes">
-            <p *ngFor="let dish of getArrDishes(categoryMenu.id, 'Antipasto')">{{ dish.name }}</p>
+            <!-- <p *ngFor="let dish of getArrDishes(categoryMenu.id, 'Antipasto')">{{ dish.name }}</p> -->
         </div>
         
         <div class="menu-round">
@@ -21,7 +21,7 @@
         <hr>
         
         <div class="menu-dishes">
-            <p *ngFor="let dish of getArrDishes(categoryMenu.id, 'Primo')">{{ dish.name }}</p>
+            <!-- <p *ngFor="let dish of getArrDishes(categoryMenu.id, 'Primo')">{{ dish.name }}</p> -->
         </div>
         
         <div class="menu-round">
@@ -31,7 +31,7 @@
         <hr>
         
         <div class="menu-dishes">
-            <p *ngFor="let dish of getArrDishes(categoryMenu.id, 'Secondo')">{{ dish.name }}</p>
+            <!-- <p *ngFor="let dish of getArrDishes(categoryMenu.id, 'Secondo')">{{ dish.name }}</p> -->
         </div>
     </div>
 </div>
