@@ -38,4 +38,22 @@ export class MenuComponent implements OnInit {
     
     return dishes;
   }
+  
+  getTypeNumColumn(arr: Dish[]): number {
+    let iLen: number = 0;
+    
+    if (arr.length == 1) {
+      iLen = 1;
+    }
+    
+    if (arr.length == 2) {
+      iLen = 2;
+    }
+    
+    if (arr.length >= 3) {
+      iLen = 3
+    }
+    
+    return iLen;
+  }
 }
