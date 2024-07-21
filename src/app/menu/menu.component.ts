@@ -12,7 +12,6 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 export class MenuComponent implements OnInit {  
   arrCategoryMenu$: BehaviorSubject<any>;
   arrDishes$: BehaviorSubject<any>;
-  tempLang: string = ''
   
   constructor(private serviceMenu: MenuService, private translateService: TranslateService) {
     this.arrCategoryMenu$ = new BehaviorSubject([]);
@@ -23,10 +22,6 @@ export class MenuComponent implements OnInit {
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
     
-    combineLatest(this.translateService.currentLang).subscribe((el) => {
-      console.log(el);
-    })
-    
     this.serviceMenu.fetchDataCategoryMenu();
     this.serviceMenu.fetchDataDishes();
     
@@ -34,20 +29,11 @@ export class MenuComponent implements OnInit {
     this.arrDishes$ = this.serviceMenu.getDishes();
     
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
-      console.log(this.translateService.currentLang)
-      if (this.tempLang == '') {
-        this.tempLang = this.translateService.currentLang;
-      }
+      this.serviceMenu.fetchDataCategoryMenu();
+      this.serviceMenu.fetchDataDishes();
       
-      if (this.tempLang != this.translateService.currentLang) {
-        this.serviceMenu.fetchDataCategoryMenu();
-        this.serviceMenu.fetchDataDishes();
-        
-        this.arrCategoryMenu$ = this.serviceMenu.getCategoriesMenu();
-        this.arrDishes$ = this.serviceMenu.getDishes();
-      }
-      
-      this.tempLang = this.translateService.currentLang;
+      this.arrCategoryMenu$ = this.serviceMenu.getCategoriesMenu();
+      this.arrDishes$ = this.serviceMenu.getDishes();
     });
   }
   
