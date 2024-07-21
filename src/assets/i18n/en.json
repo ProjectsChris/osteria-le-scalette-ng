@@ -1,0 +1,28 @@
+{
+    "home": {
+        "introduzione": "A small, cosy restaurant, on the main staircase leading to the historic centre of Castiglione del Lago and overlooking the lake.",
+        "menu": {
+            "titolo": "Menu",
+            "descrizione": "We offer typical Umbrian and Tuscan cuisine, very simple, homemade, genuine, clean and well-kept.<br>We have a discreet wine cellar with about 200 labels."
+        }
+    },
+    "navbar": {
+        "menu": "Menu",
+        "cantina": "Cellar"
+    },
+    "footer": {
+        "orario": {
+            "titolo": "Open Hours",
+            "lun": "Mon",
+            "mar": "Tue",
+            "mer": "Wed",
+            "gio": "Thu",
+            "ven": "Fri",
+            "sab": "Sat",
+            "dom": "Sun",
+            "chiuso": "Closed"
+        },
+        "posizione": "Location",
+        "prenotazione": "Reservation"
+    }
+}

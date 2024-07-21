@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ols-homepage',
@@ -6,5 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent {
-
+  constructor() { }
 }

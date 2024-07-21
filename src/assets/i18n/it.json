@@ -1,0 +1,28 @@
+{
+    "home": {
+        "introduzione": "Un piccolo e accogliente ristorante, sulla scalinata principale che portano al centro storico di Castiglione del Lago e con vista lago.",
+        "menu": {
+            "titolo": "Menù",
+            "descrizione": "Proponiamo una cucina tipica Umbra e Toscana, molto semplice, casareccia, genuina, pulita e curata.<br>Abbiamo una discreta cantina dei vini con circa 200 etichette."
+        }
+    },
+    "navbar": {
+        "menu": "Menù",
+        "cantina": "Cantina"
+    },
+    "footer": {
+        "orario": {
+            "titolo": "Orario",
+            "lun": "Lun",
+            "mar": "Mar",
+            "mer": "Mer",
+            "gio": "Gio",
+            "ven": "Ven",
+            "sab": "Sab",
+            "dom": "Dom",
+            "chiuso": "Chiuso"
+        },
+        "posizione": "Posizione",
+        "prenotazione": "Prenotazione"
+    }
+}

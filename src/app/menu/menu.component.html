@@ -1,5 +1,5 @@
 <div class="pages-menu">
-    <div class="page-menu" *ngFor="let categoryMenu of arrCategoryMenu">
+    <div class="page-menu" *ngFor="let categoryMenu of (arrCategoryMenu$ | async)">
         <div class="grid">
             <div class="row">
                 <div class="col-1 menu-title">

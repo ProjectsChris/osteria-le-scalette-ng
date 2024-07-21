@@ -32,6 +32,39 @@ $color-navbar: #111111;
     }
 
     .menu {
+        .flags-menu {
+            vertical-align: middle;
+            
+            button {
+                border: none;
+                width: 40px;
+                height: 25px;
+                background: transparent;
+                
+                &:last-child {
+                    margin-left: 10px;
+                }
+                
+                &:first-child {
+                    margin-right: 10px;
+                }
+            }
+            
+            #flag-it {
+                background-image: url(../../assets/images/flags/it.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            
+            #flag-uk {
+                background-image: url(../../assets/images/flags/uk.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+        
         ul, li {
             margin: 0;
             padding: 0;

@@ -1,4 +1,6 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { MenuService } from '../services/menu.service';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'ols-navbar',
@@ -8,7 +10,7 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 export class NavbarComponent {
   @ViewChild('menu') menu!: ElementRef;
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2, private translateService: TranslateService, private menuService: MenuService) { }
 
   openMenu(): void {
     // console.log(this.menu.nativeElement.classList.contains('open'))
@@ -19,5 +21,9 @@ export class NavbarComponent {
 
   closeMenu(): void {
     this.renderer.removeClass(this.menu.nativeElement, 'open');
+  }
+  
+  changesLang(lang: string): void {
+    this.translateService.use(lang);
   }
 }
