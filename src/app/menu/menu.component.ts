@@ -1,7 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MenuService } from '../services/menu.service';
 import { CategoryMenu, Dish } from '../types/ResponseTypes';
-import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -39,13 +39,16 @@ export class MenuComponent implements OnInit {
   
   // create a function for return all dishes with only specific parameters
   getArrDishes(idCategory: string, typeDish: string) {
-    let dishes: Dish[] = [];
+    let dishes: any[] = [];
+    console.log(typeDish)
     
-    this.arrDishes$.forEach((d) => {
-      if (d.idCategory == idCategory && d.typeDish == typeDish) {
-        dishes.push(d);
+    this.arrDishes$.forEach((el) => {
+      for(let i = 0; i < el.length; i++) {
+        if (el[i].categoria_menu == idCategory && el[i].tipologia == typeDish) {
+          dishes.push(el[i])
+        }
       }
-    });
+    })
     
     return dishes;
   }

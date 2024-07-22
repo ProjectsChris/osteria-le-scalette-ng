@@ -18,7 +18,7 @@ export class MenuService {
 
   // method for fetch all categories of menu
   fetchDataCategoryMenu(): void {
-    this.http.get('https://pipe-without.pockethost.io/api/collections/categorie_menu_' + this.translateService.currentLang + '/records?sort=order,name&filter=(order>0)').subscribe(
+    this.http.get('https://pipe-without.pockethost.io/api/collections/categorie_menu/records?sort=order,name&filter=(order>0)').subscribe(
       (res: any) => {
         this.arrCategoryMenu$.next(res.items)
       }

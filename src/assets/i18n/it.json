@@ -24,5 +24,10 @@
         },
         "posizione": "Posizione",
         "prenotazione": "Prenotazione"
+    },
+    "menu": {
+        "antipasto": "Antipasto",
+        "primo": "Primo",
+        "secondo": "Secondo"
     }
 }

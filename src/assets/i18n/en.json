@@ -24,5 +24,10 @@
         },
         "posizione": "Location",
         "prenotazione": "Reservation"
+    },
+    "menu": {
+        "antipasto": "Appetizer",
+        "primo": "First courses",
+        "secondo": "Second courses"
     }
 }
