@@ -39,9 +39,7 @@ export class MenuComponent implements OnInit {
   
   // create a function for return all dishes with only specific parameters
   getArrDishes(idCategory: string, typeDish: string) {
-    let dishes: any[] = [];
-    console.log(typeDish)
-    
+    let dishes: any[] = [];    
     this.arrDishes$.forEach((el) => {
       for(let i = 0; i < el.length; i++) {
         if (el[i].categoria_menu == idCategory && el[i].tipologia == typeDish) {

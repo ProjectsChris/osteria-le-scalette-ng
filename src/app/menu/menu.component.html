@@ -1,54 +1,60 @@
 <div class="pages-menu">
-    <div class="page-menu" *ngFor="let categoryMenu of arrCategoryMenu$ | async">
-        <div class="grid">
-            <div class="row">
-                <div class="col-1 menu-title">
-                    <h2>{{ categoryMenu.name }}</h2>
+    <div *ngIf="(arrCategoryMenu$ | async)?.length > 0">
+        <div class="page-menu" *ngFor="let categoryMenu of arrCategoryMenu$ | async">
+            <div class="grid" *ngIf="getArrDishes(categoryMenu.id, 'menu.antipasto' | translate).length > 0">
+                
+                <!-- title of the menu -->
+                <div class="row">
+                    <div class="col-1 menu-title">
+                        <h2>{{ categoryMenu.name }}</h2>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="row" *ngIf="getTypeNumColumn(getArrDishes(categoryMenu.id, 'menu.antipasto' | translate)) > 0">
-                <div class="col-1 menu-round">
-                    <h3>{{ 'menu.antipasto' | translate }}</h3>
-                    <hr>
+                
+                <!-- appetizer, first courses, second courses -->
+                <div class="row" *ngIf="getTypeNumColumn(getArrDishes(categoryMenu.id, 'menu.antipasto' | translate)) > 0">
+                    <div class="col-1 menu-round">
+                        <h3>{{ 'menu.antipasto' | translate }}</h3>
+                        <hr>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-{{ getTypeNumColumn(getArrDishes(categoryMenu.id, 'menu.antipasto' | translate)) }}" *ngFor="let dish of getArrDishes(categoryMenu.id, 'menu.antipasto' | translate)">
-                    <p class="name-dish">
-                        {{ dish.nome }}
-                    </p>
+                
+                <!-- name of dishes -->
+                <div class="row">
+                    <div class="col-{{ getTypeNumColumn(getArrDishes(categoryMenu.id, 'menu.antipasto' | translate)) }}" *ngFor="let dish of getArrDishes(categoryMenu.id, 'menu.antipasto' | translate)">
+                        <p class="name-dish">
+                            {{ dish.nome }}
+                        </p>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="row" *ngIf="getTypeNumColumn(getArrDishes(categoryMenu.id, 'menu.primo' | translate)) > 0">
-                <div class="col-1 menu-round">
-                    <h3>{{ 'menu.primo' | translate }}</h3>
-                    <hr>
+                
+                <div class="row" *ngIf="getTypeNumColumn(getArrDishes(categoryMenu.id, 'menu.primo' | translate)) > 0">
+                    <div class="col-1 menu-round">
+                        <h3>{{ 'menu.primo' | translate }}</h3>
+                        <hr>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-{{ getTypeNumColumn(getArrDishes(categoryMenu.id, 'menu.primo' | translate)) }}" *ngFor="let dish of getArrDishes(categoryMenu.id, 'menu.primo' | translate)">
-                    <p class="name-dish">
-                        {{ dish.nome }}
-                    </p>
+                
+                <div class="row">
+                    <div class="col-{{ getTypeNumColumn(getArrDishes(categoryMenu.id, 'menu.primo' | translate)) }}" *ngFor="let dish of getArrDishes(categoryMenu.id, 'menu.primo' | translate)">
+                        <p class="name-dish">
+                            {{ dish.nome }}
+                        </p>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="row" *ngIf="getTypeNumColumn(getArrDishes(categoryMenu.id, 'menu.secondo' | translate)) > 0">
-                <div class="col-1 menu-round">
-                    <h3>{{ 'menu.secondo' | translate }}</h3>
-                    <hr>
+                
+                <div class="row" *ngIf="getTypeNumColumn(getArrDishes(categoryMenu.id, 'menu.secondo' | translate)) > 0">
+                    <div class="col-1 menu-round">
+                        <h3>{{ 'menu.secondo' | translate }}</h3>
+                        <hr>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-{{ getTypeNumColumn(getArrDishes(categoryMenu.id, 'menu.secondo' | translate)) }}" *ngFor="let dish of getArrDishes(categoryMenu.id, 'menu.secondo' | translate)">
-                    <p class="name-dish">
-                        {{ dish.nome }}
-                    </p>
+                
+                <div class="row">
+                    <div class="col-{{ getTypeNumColumn(getArrDishes(categoryMenu.id, 'menu.secondo' | translate)) }}" *ngFor="let dish of getArrDishes(categoryMenu.id, 'menu.secondo' | translate)">
+                        <p class="name-dish">
+                            {{ dish.nome }}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
