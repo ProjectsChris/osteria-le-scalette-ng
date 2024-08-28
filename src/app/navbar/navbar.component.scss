@@ -14,7 +14,7 @@ $color-navbar: #111111;
     transition: background-color 0.3s;
 
     .container {
-        max-width: 1170px;
+        max-width: 1440px;
         margin: auto;
         padding: 0 30px;
         display: flex;
@@ -40,25 +40,9 @@ $color-navbar: #111111;
                 width: 40px;
                 height: 25px;
                 background: transparent;
+                border-radius: 5px;
                 
-                &:last-child {
-                    margin-left: 10px;
-                }
-                
-                &:first-child {
-                    margin-right: 10px;
-                }
-            }
-            
-            #flag-it {
-                background-image: url(../../assets/images/flags/it.png);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-            }
-            
-            #flag-uk {
-                background-image: url(../../assets/images/flags/uk.png);
+                margin: 0 10px;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;

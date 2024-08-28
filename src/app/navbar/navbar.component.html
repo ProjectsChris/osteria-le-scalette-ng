@@ -16,8 +16,7 @@
                 <li><a (click)="closeMenu()" routerLink="/menu">{{ 'navbar.menu' | translate }}</a></li>
                 <li><a (click)="closeMenu()" href="/cantina">{{ 'navbar.cantina' | translate }}</a></li>
                 <li class="flags-menu">
-                    <button (click)="changesLang('it')" id="flag-it"></button>
-                    <button (click)="changesLang('en')" id="flag-uk"></button>
+                    <button (click)="changesLang(currentLang.code)" class="flag" [ngStyle]="{'background-image': 'url(' + currentLang.image + ')'}"></button>
                 </li>
             </ul>
         </nav>
