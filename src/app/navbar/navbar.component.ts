@@ -12,6 +12,8 @@ import { Languages } from '../types/Languages';
 })
 export class NavbarComponent implements OnInit {
   @ViewChild('menu') menu!: ElementRef;
+  @ViewChild('menuFlags') menuFlags!: ElementRef;
+  
   arrLanguages$: BehaviorSubject<Array<Languages>>;
   currentLang!: Languages;
 
@@ -19,7 +21,7 @@ export class NavbarComponent implements OnInit {
     this.arrLanguages$ = new BehaviorSubject<Array<Languages>>([]);
     this.currentLang = {
       id: "",
-      lang: "",
+      language: "",
       code: "",
       enabled: false,
       image: "",
@@ -27,7 +29,6 @@ export class NavbarComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    // this.arrLanguages$ = this.languagesService.getData();
     this.translateService.onLangChange.subscribe((event: any) => {
       this.languagesService.getData().subscribe((el) => {{
         el.forEach((x: Languages) => {
@@ -36,6 +37,8 @@ export class NavbarComponent implements OnInit {
           }
         })
       }})
+      
+      this.arrLanguages$ = this.languagesService.getData();
     });
   }
 
@@ -44,6 +47,15 @@ export class NavbarComponent implements OnInit {
     this.renderer.addClass(this.menu.nativeElement, 'open');
     // this.renderer.setStyle(this.menu.nativeElement, "transition", "transform 0.7s ease-in-out")
     // console.log(this.menu.nativeElement.classList.contains('open'))
+  }
+  
+  
+  openMenuFlags(): void {
+    this.renderer.addClass(this.menuFlags.nativeElement, 'openMenuFlag');
+  }
+  
+  closeMenuFlags(): void {
+    this.renderer.removeClass(this.menuFlags.nativeElement, 'openMenuFlag');
   }
 
   closeMenu(): void {

@@ -1,6 +1,6 @@
 export interface Languages {
     id: string
-    lang: string,
+    language: string,
     code: string,
     enabled: boolean,
     image: string
