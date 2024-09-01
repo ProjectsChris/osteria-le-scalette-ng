@@ -275,27 +275,20 @@ $color-navbar: #111111;
     }
 }
 
-.alert-change-languages {
-    display: none;
+.banner {
     position: fixed;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    color: #000;
-    z-index: 999;
+    z-index: 11;
+    display: none;
     
-    .alert-lang {
+    .banner-change {
         border-radius: 5px;
         overflow: hidden;
         width: 300px;
         background: #fff;
         padding-bottom: 15px;
         
-        .alert-head {
+        .banner-head {
             position: relative;
-            // padding: 14px 12px;
             height: 40px;
             
             button {
@@ -304,7 +297,6 @@ $color-navbar: #111111;
                 right: 0;
                 background: #ff0000;
                 color: #fff;
-                // width: 100%;
                 border: none;
                 border-radius: 0;
                 
@@ -314,7 +306,7 @@ $color-navbar: #111111;
             }
         }
         
-        .alert-body {
+        .banner-body {
             padding: 10px;
             position: relative;
             
@@ -322,10 +314,9 @@ $color-navbar: #111111;
                 margin-bottom: 10px;
             }
             
-            .body-choose {
+            .langs-available {
                 height: 180px;
                 overflow: scroll;
-                
                 
                 button {
                     text-align: left;
@@ -355,36 +346,4 @@ $color-navbar: #111111;
 
 .openMenuFlag {
     display: flex;
-}
-
-.change-lang {
-    // display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    color: #000;
-    z-index: 999;
-    
-    .chang-lang-content {
-        background: #fff;
-        padding: 14px 21px;
-        
-        .scroll-available-languages {
-            border: 1px solid red;
-            width: 250px;
-            display: block;
-            
-            button {
-                width: 100%;
-                vertical-align: middle;
-                
-                img {
-                    width: 42px;
-                }
-            }
-        }
-    }
 }

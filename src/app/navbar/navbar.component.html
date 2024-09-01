@@ -36,38 +36,20 @@
     </div>
 </header>
 
-<div class="alert-change-languages overlay" #menuFlags>
-    <div class="alert-lang">
-        <div class="alert-head">
+<div class="banner overlay" #menuFlags>
+    <div class="banner-change">
+        <div class="banner-head">
             <button (click)="closeMenuFlags()">X</button>
         </div>
-        <div class="alert-body">
+        <div class="banner-body">
             <p>Cambia la lingua:</p>
             
-            <div class="body-choose">
+            <div class="langs-available">
                 <button (click)="closeMenuFlags()" (click)="changesLang(flag.code)" *ngFor="let flag of arrLanguages$ | async">
                     <img src="{{ flag.image }}" alt="">
                     <p>{{ flag.language }}</p>
                 </button>
             </div>
         </div>
-        <div class="alert-footer"></div>
     </div>
 </div>
-
-<!-- <div class="change-lang overlay">
-    <div class="chang-lang-content">
-        <p>Cambia la tua lingua</p>
-        
-        <div class="scroll-available-languages">
-            <div class="box-language">
-                
-            </div>
-            <button><img src="../../assets/images/flags/it.png" alt="">Italiano</button>
-            <button>Inglese</button>
-            <button>Olandese</button>
-            <button>Italiano</button>
-            <button>Italiano</button>
-        </div>
-    </div>
-</div> -->

@@ -49,7 +49,6 @@ export class NavbarComponent implements OnInit {
     // console.log(this.menu.nativeElement.classList.contains('open'))
   }
   
-  
   openMenuFlags(): void {
     this.renderer.addClass(this.menuFlags.nativeElement, 'openMenuFlag');
   }
